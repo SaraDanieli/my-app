@@ -1,0 +1,34 @@
+body {
+  font-family: "Ubuntu", sans-serif;
+  background-color: #ededed;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.container {
+  max-width: 70%;
+  background-color: #ffffff;
+}
+
+.today-forecast-icon {
+  font-size: 118px;
+}
+
+.forecast-icon {
+  font-size: 50px;
+}
+
+.card {
+  text-align: center;
+}
+
+.day-name {
+  font-size: 18px;
+}
+
+.degrees {
+  text-decoration: none;
+}

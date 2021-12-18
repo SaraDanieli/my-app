@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>Weather app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="container mx-auto mt-5 py-5 border shadow">
+      <form id="search-city-form" class="pt-4">
+        <div class="row">
+          <div class="col-6 offset-2">
+            <input
+              type="text"
+              id="city-input"
+              class="form-control shadow-sm"
+              placeholder="Enter a city..."
+            />
+          </div>
+          <div class="col-1">
+            <input type="submit" class="btn btn-primary" value="search" />
+          </div>
+          <div class="col-1">
+            <input
+              id="current-location-weather"
+              type="button"
+              class="btn btn-success"
+              value="current"
+            />
+          </div>
+        </div>
+      </form>
+      <div class="row mt-4">
+        <div class="col-3 offset-3 pt-5 mt-2 me-3">
+          <h1 id="current-city">Edinburgh</h1>
+        </div>
+        <div class="col-2 px-4 today-forecast-icon">☀️</div>
+        <div class="col-2">
+          <div class="row pt-4 mt-2 fs-5 lh-lg">
+            <div class="col-12 fw-bold">
+              <span id="current-temperature">12 °C</span>
+            </div>
+            <div id="weather-description" class="col-12">sunny</div>
+            <div id="current-day" class="col-6"></div>
+            <div id="current-time" class="col-6"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row my-4">
+        <div class="col-2 offset-1">
+          <div class="card shadow">
+            <div class="card-body">
+              <p class="card-title day-name">Monday</p>
+              <p class="card-text forecast-icon">🌧</p>
+              <p>5° / <strong>10°</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card shadow">
+            <div class="card-body">
+              <p class="card-title day-name">Tuesday</p>
+              <p class="card-text forecast-icon">⛈</p>
+              <p>2°/ <strong>9°</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card shadow">
+            <div class="card-body">
+              <p class="card-title day-name">Wednesday</p>
+              <p class="card-text forecast-icon">⛅️</p>
+              <p>3° / <strong>6°</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card shadow">
+            <div class="card-body">
+              <p class="card-title day-name">Thursday</p>
+              <p class="card-text forecast-icon">🌤</p>
+              <p>8° / <strong>12°</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card shadow">
+            <div class="card-body">
+              <p class="card-title day-name">Friday</p>
+              <p class="card-text forecast-icon">🌦</p>
+              <p>5°/ <strong>10°</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
