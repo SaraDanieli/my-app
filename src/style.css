@@ -32,3 +32,12 @@ h1 {
 .degrees {
   text-decoration: none;
 }
+
+.git-hub-rep {
+  text-align: center;
+  margin: 10px 0 30px;
+}
+
+.git-hub-rep a {
+  text-decoration: none;
+}
