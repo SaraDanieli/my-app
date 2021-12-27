@@ -54,7 +54,6 @@ function showWeather(response) {
   let currentCity = document.querySelector("#current-city");
   let city = response.data.name;
 
-  console.log(response);
   currentCity.innerHTML = city;
   let windSpeed = document.querySelector("#wind-speed");
   windSpeed.innerHTML = response.data.wind.speed;
@@ -62,15 +61,17 @@ function showWeather(response) {
   humidity.innerHTML = response.data.main.humidity;
 }
 
+function search(city) {
+  let apiKey = "2f82b437e561d6487abf6249f713bd77";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+}
+
 function searchCityWeather(event) {
   event.preventDefault();
 
-  let apiKey = "2f82b437e561d6487abf6249f713bd77";
-  let cityName = document.querySelector("#city-input").value;
-
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
-
-  axios.get(apiUrl).then(showWeather);
+  let cityName = document.querySelector("#city-input");
+  search(cityName.value);
 }
 
 searchCityForm.addEventListener("submit", searchCityWeather);
@@ -91,4 +92,4 @@ let currentButton = document.querySelector("#current-location-weather");
 
 currentButton.addEventListener("click", showCurrentLocation);
 
-showCurrentLocation();
+search("Edinburgh");
