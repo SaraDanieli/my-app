@@ -50,7 +50,7 @@ function showWeather(response) {
   let description = document.querySelector("#weather-description");
   description.innerHTML = weatherDescription;
   let currentTemperature = document.querySelector("#current-temperature");
-  currentTemperature.innerHTML = `${temp} °C`;
+  currentTemperature.innerHTML = temp;
   let currentCity = document.querySelector("#current-city");
   let city = response.data.name;
   console.log(response);
