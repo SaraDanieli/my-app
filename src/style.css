@@ -45,10 +45,19 @@ h1 {
 .temperature {
   font-size: 60px;
   position: relative;
-  top: -35px;
+  top: -20px;
+}
+
+.temperature-box {
+  height: 57px;
 }
 
 .units {
   position: relative;
-  top: -63px;
+  top: -50px;
+}
+
+.weather-description {
+  font-size: 18px;
+  font-weight: bold;
 }

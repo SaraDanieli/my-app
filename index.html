@@ -48,22 +48,30 @@
         </div>
       </form>
       <div class="row mt-4">
-        <div class="col-3 offset-3 pt-5 mt-2 me-3">
+        <div class="col-3 offset-2 mt-4 pt-1 me-3">
           <h1 id="current-city">Edinburgh</h1>
+          <div
+            id="weather-description"
+            class="col-12 weather-description"
+          ></div>
+          <div class="col-12">
+            <span id="current-day"></span>
+            <span id="current-time"></span>
+          </div>
         </div>
-        <div class="col-2 px-4 today-forecast-icon">☀️</div>
+        <div class="col-2 offset-1 px-4 today-forecast-icon">☀️</div>
         <div class="col-2">
-          <div class="row pt-4 mt-2 fs-5 lh-lg">
-            <div class="col-12 fw-bold">
-              <span id="current-temperature" class="temperature"> 12 </span>
+          <div class="row pt-4 mt-2">
+            <div class="col-12 fw-bold temperature-box">
+              <span id="current-temperature" class="temperature"></span>
               <span class="units">
                 <span>°C</span> |
                 <span>°F</span>
               </span>
             </div>
-            <div id="weather-description" class="col-12">sunny</div>
-            <div id="current-day" class="col-6"></div>
-            <div id="current-time" class="col-6"></div>
+
+            <div id="wind-speed" class="col-12">wind speed: 5</div>
+            <div id="humidity" class="col-12">humidity: 5</div>
           </div>
         </div>
       </div>
