@@ -14,7 +14,7 @@ h1 {
 }
 
 .today-forecast-icon {
-  font-size: 118px;
+  width: 140px;
 }
 
 .forecast-icon {
@@ -52,6 +52,10 @@ h1 {
   height: 57px;
 }
 
+.temperature-box a {
+  text-decoration: none;
+}
+
 .units {
   position: relative;
   top: -50px;
@@ -60,4 +64,18 @@ h1 {
 .weather-description {
   font-size: 18px;
   font-weight: bold;
+}
+
+.weather-description::first-letter {
+  text-transform: capitalize;
+}
+
+.active {
+  color: black;
+  text-decoration: none;
+  cursor: default;
+}
+
+.active:hover {
+  color: black;
 }

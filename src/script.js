@@ -42,23 +42,27 @@ showDateAndTime();
 
 //feature 2
 
-let searchCityForm = document.querySelector("#search-city-form");
-
 function showWeather(response) {
-  let temp = Math.round(response.data.main.temp);
   let weatherDescription = response.data.weather[0].description;
   let description = document.querySelector("#weather-description");
-  description.innerHTML = weatherDescription;
   let currentTemperature = document.querySelector("#current-temperature");
-  currentTemperature.innerHTML = temp;
   let currentCity = document.querySelector("#current-city");
   let city = response.data.name;
-
-  currentCity.innerHTML = city;
   let windSpeed = document.querySelector("#wind-speed");
-  windSpeed.innerHTML = response.data.wind.speed;
   let humidity = document.querySelector("#humidity");
+  let forecastIcon = document.querySelector("#forecast-icon");
+
+  temperature = Math.round(response.data.main.temp);
+  currentTemperature.innerHTML = temperature;
+  description.innerHTML = weatherDescription;
+  currentCity.innerHTML = city;
+  windSpeed.innerHTML = response.data.wind.speed;
   humidity.innerHTML = response.data.main.humidity;
+  forecastIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  forecastIcon.setAttribute("alt", weatherDescription);
 }
 
 function search(city) {
@@ -74,8 +78,6 @@ function searchCityWeather(event) {
   search(cityName.value);
 }
 
-searchCityForm.addEventListener("submit", searchCityWeather);
-
 function getPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
@@ -88,8 +90,35 @@ function showCurrentLocation() {
   navigator.geolocation.getCurrentPosition(getPosition);
 }
 
-let currentButton = document.querySelector("#current-location-weather");
+function convertTofahrenheit(event) {
+  event.preventDefault();
 
+  let temperatureElement = document.querySelector("#current-temperature");
+  let fahrenheitTemperature = (temperature * 9) / 5 + 32;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temperature");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+
+  temperatureElement.innerHTML = Math.round(temperature);
+}
+
+let currentButton = document.querySelector("#current-location-weather");
+let temperature = null;
+let searchCityForm = document.querySelector("#search-city-form");
+let fahrenheitLink = document.querySelector("#fahrenheit");
+let celsiusLink = document.querySelector("#celsius");
+
+searchCityForm.addEventListener("submit", searchCityWeather);
 currentButton.addEventListener("click", showCurrentLocation);
+fahrenheitLink.addEventListener("click", convertTofahrenheit);
+celsiusLink.addEventListener("click", convertToCelsius);
 
 search("Edinburgh");

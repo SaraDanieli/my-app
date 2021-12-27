@@ -35,13 +35,13 @@
             />
           </div>
           <div class="col-1">
-            <input type="submit" class="btn btn-primary" value="search" />
+            <input type="submit" class="btn btn-warning" value="search" />
           </div>
           <div class="col-1">
             <input
               id="current-location-weather"
               type="button"
-              class="btn btn-success"
+              class="btn btn-secondary"
               value="current"
             />
           </div>
@@ -49,7 +49,7 @@
       </form>
       <div class="row mt-4">
         <div class="col-3 offset-2 mt-4 pt-1 me-3">
-          <h1 id="current-city">Edinburgh</h1>
+          <h1 id="current-city"></h1>
           <div
             id="weather-description"
             class="col-12 weather-description"
@@ -59,18 +59,20 @@
             <span id="current-time"></span>
           </div>
         </div>
-        <div class="col-2 offset-1 px-4 today-forecast-icon">☀️</div>
+        <div class="col-2 offset-1 px-4">
+          <img id="forecast-icon" class="today-forecast-icon" src="" alt="" />
+        </div>
         <div class="col-2">
           <div class="row pt-4 mt-2">
             <div class="col-12 fw-bold temperature-box">
               <span id="current-temperature" class="temperature"></span>
               <span class="units">
-                <span>°C</span> |
-                <span>°F</span>
+                <a href="#" id="celsius" class="active">°C</a> |
+                <a href="#" id="fahrenheit">°F</a>
               </span>
             </div>
 
-            <div class="col-12">Wind: <span id="wind-speed"></span> mph</div>
+            <div class="col-12">Wind: <span id="wind-speed"></span> km/h</div>
             <div class="col-12">Humidity: <span id="humidity"></span>%</div>
           </div>
         </div>
