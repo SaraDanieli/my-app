@@ -53,8 +53,13 @@ function showWeather(response) {
   currentTemperature.innerHTML = temp;
   let currentCity = document.querySelector("#current-city");
   let city = response.data.name;
+
   console.log(response);
   currentCity.innerHTML = city;
+  let windSpeed = document.querySelector("#wind-speed");
+  windSpeed.innerHTML = response.data.wind.speed;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = response.data.main.humidity;
 }
 
 function searchCityWeather(event) {
