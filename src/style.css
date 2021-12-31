@@ -1,9 +1,10 @@
 body {
   font-family: "Ubuntu", sans-serif;
-  background-color: #ededed;
+  background-color: rgb(255, 202, 43, 0.6);
 }
 
 h1 {
+  color: #5c6369;
   font-size: 50px;
   font-weight: 900;
 }
@@ -18,7 +19,7 @@ h1 {
 }
 
 .forecast-icon {
-  font-size: 50px;
+  width: 65px;
 }
 
 .card {
@@ -46,6 +47,7 @@ h1 {
   font-size: 60px;
   position: relative;
   top: -20px;
+  color: #5c6369;
 }
 
 .temperature-box {
@@ -78,4 +80,12 @@ h1 {
 
 .active:hover {
   color: black;
+}
+
+.temp-min {
+  opacity: 0.5;
+}
+
+.forecast-box:hover {
+  background-color: rgb(255, 202, 43, 0.2);
 }

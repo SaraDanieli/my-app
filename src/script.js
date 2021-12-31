@@ -1,5 +1,3 @@
-//feature 1
-
 function showDay() {
   let currentDate = new Date();
   let days = [
@@ -40,7 +38,58 @@ function showDateAndTime() {
 
 showDateAndTime();
 
-//feature 2
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastDays = document.querySelector("#forecast");
+
+  let forecastHTML = "";
+
+  forecast.forEach(function (day, index) {
+    if (index < 6 && index > 0) {
+      forecastHTML =
+        forecastHTML +
+        ` <div class="col-2 ">
+        <div class="card shadow forecast-box">
+            <div class="card-body">
+              <p class="card-title day-name">${formatDay(day.dt)}</p>
+              <p class="card-text"> <img id="forecast-icon" class="forecast-icon" src="http://openweathermap.org/img/wn/${
+                day.weather[0].icon
+              }@2x.png" alt="" />
+              
+              </p>
+              <p><span class="temp-min">${Math.round(
+                day.temp.min
+              )}°</span> / ${Math.round(day.temp.max)}°</p>
+            </div>
+          </div>
+          </div>`;
+    }
+  });
+
+  forecastDays.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "2f82b437e561d6487abf6249f713bd77";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
 
 function showWeather(response) {
   let weatherDescription = response.data.weather[0].description;
@@ -63,6 +112,8 @@ function showWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   forecastIcon.setAttribute("alt", weatherDescription);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
