@@ -124,8 +124,11 @@ function search(city) {
 
 function searchCityWeather(event) {
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 
   let cityName = document.querySelector("#city-input");
+
   search(cityName.value);
 }
 
