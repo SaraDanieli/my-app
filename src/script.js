@@ -63,8 +63,8 @@ function displayForecast(response) {
     if (index < 6 && index > 0) {
       forecastHTML =
         forecastHTML +
-        ` <div class="col-2 ">
-        <div class="card shadow forecast-box">
+        ` <div class="col-12 col-sm-5 col-lg-4 col-xl-2 mb-4 ">
+        <div class="card mx-3 mx-sm-auto shadow forecast-box">
             <div class="card-body">
               <p class="card-title day-name">${formatDay(day.dt)}</p>
               <p class="card-text"> <img id="forecast-icon" class="forecast-icon" src="http://openweathermap.org/img/wn/${
