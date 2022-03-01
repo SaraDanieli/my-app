@@ -22,11 +22,12 @@
 
     <link rel="stylesheet" href="src/style.css" />
   </head>
+
   <body>
     <div class="container mx-auto mt-5 py-5 border shadow">
       <form id="search-city-form" class="pt-4">
         <div class="row">
-          <div class="col-6 offset-2">
+          <div class="col-10 offset-1 col-sm-8 col-lg-6 offset-sm-2">
             <input
               type="text"
               id="city-input"
@@ -34,14 +35,18 @@
               placeholder="Enter a city..."
             />
           </div>
-          <div class="col-1">
-            <input type="submit" class="btn btn-warning" value="search" />
+          <div class="col-sm-1">
+            <input
+              type="submit"
+              class="btn btn-warning d-none d-lg-block"
+              value="search"
+            />
           </div>
-          <div class="col-1">
+          <div class="col-sm-1">
             <input
               id="current-location-weather"
               type="button"
-              class="btn btn-secondary"
+              class="btn btn-secondary d-none d-lg-block"
               value="current"
             />
           </div>
