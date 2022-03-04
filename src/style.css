@@ -107,10 +107,13 @@ h1 {
 
   .temperature-box {
     height: 30px;
+    margin-top: 20px;
   }
 
   .today-forecast-icon {
     width: 130px;
+    display: block;
+    margin: 0 auto;
   }
 
   .weather-description,
@@ -146,5 +149,6 @@ h1 {
 
   .temperature-box {
     height: 5px;
+    margin-top: 30px;
   }
 }
