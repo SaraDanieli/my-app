@@ -9,7 +9,7 @@ h1 {
   font-weight: 900;
 }
 
-.container {
+.container-box {
   max-width: 70%;
   background-color: #ffffff;
 }
@@ -89,3 +89,31 @@ h1 {
 .forecast-box:hover {
   background-color: rgb(255, 202, 43, 0.2);
 }
+
+/* @media (max-width: 600px) {
+  #current-city {
+    font-size: 40px;
+  }
+
+  .container-box {
+    max-width: 95%;
+  }
+
+  .temperature {
+    font-size: 40px;
+    position: relative;
+    top: -32px;
+  }
+
+  .temperature-box {
+    height: 30px;
+  }
+
+  .today-forecast-icon {
+    width: 100px;
+  }
+
+  .weather-description {
+    font-size: 16px;
+  }
+} */
