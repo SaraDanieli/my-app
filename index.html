@@ -24,8 +24,10 @@
   </head>
 
   <body>
-    <div class="container-sm container-box mx-auto mt-5 py-5 border shadow">
-      <form id="search-city-form" class="pt-4">
+    <div
+      class="container-sm container-box mx-auto mt-lg-5 mt-2 py-5 border shadow"
+    >
+      <form id="search-city-form" class="pt-lg-4">
         <div class="row">
           <div class="col-10 offset-1 col-sm-10 col-lg-7 offset-sm-1">
             <input
@@ -53,22 +55,24 @@
         </div>
       </form>
       <div class="row mt-4">
-        <div class="col-12 col-md-3 offset-md-2 offset-1 mt-4 pt-1 me-3">
+        <div
+          class="col-12 col-lg-3 offset-lg-2 offset-1 mt-lg-4 pt-1 me-lg-3 ps-4 ps-lg-0"
+        >
           <h1 id="current-city"></h1>
           <div
             class="col-12 weather-description"
             id="weather-description"
           ></div>
-          <div class="col-12">
+          <div class="col-12 mb-4 mb-sm-0">
             <span id="current-day"></span>
             <span id="current-time"></span>
           </div>
         </div>
-        <div class="col-md-2 col-6 offset-md-1 px-4">
+        <div class="col-lg-2 col-5 col-sm-6 offset-lg-1 px-4 ps-sm-5 ps-lg-0">
           <img id="forecast-icon" class="today-forecast-icon" src="" alt="" />
         </div>
-        <div class="col-md-2 col-6">
-          <div class="row pt-4 mt-2">
+        <div class="col-lg-2 col-6">
+          <div class="row pt-4 mt-lg-2 mt-2">
             <div class="col-12 fw-bold temperature-box">
               <span id="current-temperature" class="temperature"></span>
               <span class="units">
@@ -76,9 +80,10 @@
                 <a href="#" id="fahrenheit">°F</a>
               </span>
             </div>
-
-            <div class="col-12">Wind: <span id="wind-speed"></span> km/h</div>
-            <div class="col-12">Humidity: <span id="humidity"></span>%</div>
+            <div class="wind-humidity">
+              <div class="col-12">Wind: <span id="wind-speed"></span> km/h</div>
+              <div class="col-12">Humidity: <span id="humidity"></span>%</div>
+            </div>
           </div>
         </div>
       </div>

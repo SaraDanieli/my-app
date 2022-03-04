@@ -110,10 +110,41 @@ h1 {
   }
 
   .today-forecast-icon {
+    width: 130px;
+  }
+
+  .weather-description,
+  .wind-humidity,
+  #current-time,
+  #current-day {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 374px) {
+  #current-city {
+    font-size: 30px;
+  }
+
+  .temperature {
+    font-size: 25px;
+    position: relative;
+    top: -42px;
+  }
+
+  .today-forecast-icon {
     width: 100px;
   }
 
-  .weather-description {
-    font-size: 16px;
+  .weather-description,
+  .wind-humidity,
+  .units,
+  #current-time,
+  #current-day {
+    font-size: 14px;
+  }
+
+  .temperature-box {
+    height: 5px;
   }
 }
