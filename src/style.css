@@ -90,7 +90,7 @@ h1 {
   background-color: rgb(255, 202, 43, 0.2);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1176px) {
   #current-city {
     font-size: 40px;
   }
